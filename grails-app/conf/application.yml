@@ -101,22 +101,28 @@ dataSource:
 environments:
     development:
         dataSource:
+            username: 'fyjh7x8fr4u5g5g2'
+            password: 'ro3d26mqjbzf2ts7'
             dbCreate: update
-            url: 'jdbc:mysql://localhost:3306/villa_luro_friends'
+            url: 'jdbc:mysql://d6ybckq58s9ru745.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/s3j2m9ulrypbidfj'
     test:
         dataSource:
+            username: 'root'
+            password: 'root'
             dbCreate: update
-            url: jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+            url: 'jdbc:mysql://localhost:3306/villa_luro_friends'
     production:
         dataSource:
-            dbCreate: none
-            url: jdbc:h2:./prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+            username: 'fyjh7x8fr4u5g5g2'
+            password: 'ro3d26mqjbzf2ts7'
+            dbCreate: update
+            url: 'jdbc:mysql://d6ybckq58s9ru745.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/s3j2m9ulrypbidfj'
             properties:
                 jmxEnabled: true
                 initialSize: 5
                 maxActive: 50
-                minIdle: 5
-                maxIdle: 25
+                minIdle: 1
+                maxIdle: 3
                 maxWait: 10000
                 maxAge: 600000
                 timeBetweenEvictionRunsMillis: 5000
